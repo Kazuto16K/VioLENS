@@ -1,0 +1,108 @@
+{% extends 'base.html' %}
+
+{% block styles %}
+<style>
+  body {
+    background: linear-gradient(120deg, #f0f4ff, #ffffff);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+
+  .container {
+    max-width: 900px;
+    margin: 60px auto;
+    padding: 40px;
+    background-color: rgba(255, 255, 255, 0.95);
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+
+  h1 {
+    color: #1e293b;
+    margin-bottom: 24px;
+  }
+
+  #webcam-box {
+    width: 100%;
+    height: 500px;
+    background-color: #e5e7eb;
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #webcam-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  form {
+    margin-bottom: 20px;
+  }
+
+  select {
+    padding: 10px;
+    margin: 10px;
+    font-size: 16px;
+    border-radius: 8px;
+    border: 1px solid #cbd5e1;
+  }
+
+  #toggle-btn, #stop-btn {
+    padding: 14px 28px;
+    background-color: #2563eb;
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.4s ease, transform 0.3s ease;
+  }
+
+  #toggle-btn:hover, #stop-btn:hover {
+    background-color: #1e40af;
+    transform: scale(1.03);
+  }
+</style>
+{% endblock styles %}
+
+{% block content %}
+<div class="container">
+  <h1>Real-Time Violence Detection</h1>
+
+  <form method="POST" action="{{ url_for('views.monitor') }}">
+    <div>
+      <label for="source">Select Video Source:</label>
+      <select name="source" id="source" required>
+        <option value="" disabled selected>Select a Webcam</option>
+        <option value="0">Webcam 0</option>
+        <option value="1">Webcam 1</option>
+      </select>
+    </div>
+
+    <div>
+      <label for="camera_angle">Camera Angle:</label>
+      <select name="camera_angle" id="camera_angle" required>
+        <option value="" disabled selected>Select a camera angle</option>
+        <option value="0">Front View</option>
+        <option value="1">CCTV</option>
+      </select>
+    </div>
+
+    <button id="toggle-btn" type="submit">Start Monitoring</button>
+  </form>
+
+  <div id="webcam-box">
+    <img src="{{ url_for('views.video_feed') }}" alt="Live Feed">
+  </div>
+
+  <form action="{{ url_for('views.stop_monitoring') }}">
+    <button id="stop-btn" type="submit">Stop Monitoring</button>
+  </form>
+</div>
+
+{% endblock content %}

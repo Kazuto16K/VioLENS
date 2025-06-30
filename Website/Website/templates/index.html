@@ -1,0 +1,148 @@
+{% extends "base.html" %}
+
+{% block styles %}
+<style>
+  body {
+    background: linear-gradient(135deg, #f0f4ff, #ffffff);
+    background-attachment: fixed;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+
+  .landing-container {
+    max-width: 1000px;
+    margin: 60px auto;
+    padding: 32px;
+    background-color: rgba(255, 255, 255, 0.95);
+    border-radius: 16px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+    backdrop-filter: blur(10px);
+  }
+
+  .landing-title {
+    font-size: 40px;
+    font-weight: 700;
+    color: #1e293b;
+    text-align: center;
+    margin-bottom: 24px;
+  }
+
+  .landing-subtitle {
+    font-size: 18px;
+    color: #4b5563;
+    text-align: center;
+    margin-bottom: 48px;
+    line-height: 1.7;
+    max-width: 750px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 24px;
+  }
+
+  .feature-card {
+    background-color: #f9fafb;
+    padding: 24px;
+    border-radius: 12px;
+    border: 1px solid #e5e7eb;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .feature-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+  }
+
+  .feature-title {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #111827;
+  }
+
+  .feature-description {
+    font-size: 15px;
+    color: #6b7280;
+    line-height: 1.5;
+  }
+
+  .cta {
+    text-align: center;
+    margin-top: 48px;
+  }
+
+  .cta button {
+    padding: 14px 28px;
+    font-size: 16px;
+    background-color: #4f46e5;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+
+  .cta button:hover {
+    background-color: #4338ca;
+    transform: scale(1.03);
+  }
+
+  @media (max-width: 600px) {
+    .landing-title {
+      font-size: 30px;
+    }
+
+    .landing-subtitle {
+      font-size: 16px;
+    }
+  }
+</style>
+{% endblock styles %}
+
+{% block content %}
+<div class="landing-container">
+  <h1 class="landing-title">Real-Time Violence Detection</h1>
+  <p class="landing-subtitle">
+    Harness the power of deep learning to detect violence as it happens. Our system offers fast, accurate, and intelligent video surveillance for public safety, security monitoring, and threat prevention.
+  </p>
+
+  <div class="features">
+    <div class="feature-card">
+      <h3 class="feature-title">Real-Time Detection</h3>
+      <p class="feature-description">
+        Our AI processes live video feeds instantly, identifying violent actions as they occur and providing instant alerts for rapid response.
+      </p>
+    </div>
+
+    <div class="feature-card">
+      <h3 class="feature-title">Advanced Deep Learning</h3>
+      <p class="feature-description">
+        Built with cutting-edge LSTM and Transformer architectures trained on diverse custom generated datasets to ensure precision.
+      </p>
+    </div>
+
+    <div class="feature-card">
+      <h3 class="feature-title">Smart Alert System</h3>
+      <p class="feature-description">
+        Instantly notifies designated contacts or emergency responders when violence is detected, helping prevent escalation.
+      </p>
+    </div>
+
+    <div class="feature-card">
+      <h3 class="feature-title">Seamless Integration</h3>
+      <p class="feature-description">
+        Easily integrates with your existing CCTV infrastructure, enhancing safety without disrupting your current setup.
+      </p>
+    </div>
+  </div>
+
+  <div class="cta">
+    <a href="/auth/sign-up">
+      <button>Get Started</button>
+    </a>
+  </div>
+</div>
+{% endblock content %}

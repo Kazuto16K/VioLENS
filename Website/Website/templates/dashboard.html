@@ -1,0 +1,98 @@
+{% extends "base.html" %}
+
+{% block styles %}
+<style>
+  body {
+    background: linear-gradient(to right, #f0f4ff, #ffffff);
+    background-attachment: fixed;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+
+  .dashboard-container {
+    max-width: 700px;
+    margin: 60px auto;
+    padding: 32px;
+    background-color: rgba(255, 255, 255, 0.95);
+    border-radius: 16px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+    backdrop-filter: blur(10px);
+  }
+
+  .dashboard-title {
+    font-size: 32px;
+    font-weight: 700;
+    color: #1e293b;
+    text-align: center;
+    margin-bottom: 24px;
+  }
+
+  form label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 600;
+    color: #374151;
+  }
+
+  form input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 18px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    font-size: 15px;
+    background-color: #f9fafb;
+    transition: border-color 0.3s ease;
+  }
+
+  form input:focus {
+    border-color: #6366f1;
+    outline: none;
+    background-color: #ffffff;
+  }
+
+  .submit-btn {
+    width: 100%;
+    padding: 14px;
+    font-size: 16px;
+    background-color: #4f46e5;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+
+  .submit-btn:hover {
+    background-color: #4338ca;
+    transform: scale(1.03);
+  }
+</style>
+{% endblock styles %}
+
+{% block content %}
+<div class="dashboard-container">
+  <h1 class="dashboard-title">Update Your Details</h1>
+
+  <form action="/auth/update_details" method="post">
+    <label for="phone">Phone Number</label>
+    <input type="number" id="phone" name="phone" placeholder="Enter Phone Number" value="{{ user.phone }}">
+  
+    <label for="alert-phone">Alert Number</label>
+    <input type="number" id="alert-phone" name="alert-phone" placeholder="Enter Alert Number" value="{{ user.alert_phone }}">
+  
+    <label for="alert-email">Alert Email</label>
+    <input type="email" id="alert-email" name="alert-email" placeholder="Enter Alert Email" value="{{ user.alert_email }}">
+  
+    <label for="current-password">Current Password (required to change password)</label>
+    <input type="password" id="current-password" name="current-password" placeholder="Enter current password">
+  
+    <label for="password1">New Password</label>
+    <input type="password" id="password1" name="password1" placeholder="Enter new password">
+  
+    <label for="password2">Re-Enter Password</label>
+    <input type="password" id="password2" name="password2" placeholder="Confirm new password">
+  
+    <button type="submit" class="submit-btn">Update</button>
+  </form>
+</div>
+{% endblock content %}

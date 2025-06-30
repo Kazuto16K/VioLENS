@@ -1,0 +1,92 @@
+{% extends "base.html" %}
+
+{% block styles %}
+<style>
+  body {
+    background: linear-gradient(120deg, #f0f4ff, #ffffff);
+    background-attachment: fixed;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+
+  .main-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 5%;
+    margin: 60px auto;
+    max-width: 1000px;
+    padding: 20px;
+  }
+
+  .detection-card {
+    background-color: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 40px 30px;
+    width: 100%;
+    max-width: 420px;
+    height: 350px;
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition: transform 0.3s ease;
+  }
+
+  .detection-card:hover {
+    transform: translateY(-5px);
+  }
+
+  .detection-title {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #1e293b;
+  }
+
+  .detection-desc {
+    font-size: 16px;
+    color: #475569;
+    margin-bottom: 32px;
+  }
+
+  .detection-btn {
+    padding: 14px 24px;
+    background-color: #2563eb;
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.4s ease, transform 0.3s ease;
+  }
+
+  .detection-btn:hover {
+    background-color: #1e40af;
+    transform: scale(1.03);
+  }
+
+  @media screen and (max-width: 800px) {
+    .main-container {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+</style>
+{% endblock styles %}
+
+{% block content %}
+<div class="main-container">
+
+  <div class="detection-card">
+    <div class="detection-title">Real-Time Detection</div>
+    <div class="detection-desc">
+      Detect violence in real-time with live webcam feed using PoseLSTM and Mediapipe technology.
+    </div>
+    <form action="/monitor" method="get">
+      <button type="submit" class="detection-btn">Start Live Feed</button>
+    </form>
+  </div>
+</div>
+{% endblock content %}

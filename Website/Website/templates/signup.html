@@ -1,0 +1,107 @@
+{% extends "base.html" %}
+
+{% block styles %}
+<style>
+  form {
+    background-color: white;
+    padding: 32px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    max-width: 550px;
+    margin: auto;
+    margin-top: 40px;
+  }
+
+  h2 {
+    text-align: center;
+    margin-bottom: 24px;
+    font-size: 28px;
+    color: #111827;
+  }
+
+  form > div {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  label {
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #374151;
+  }
+
+  input[type="email"],
+  input[type="text"],
+  input[type="password"],
+  input[type="number"] {
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    background-color: #f9fafb;
+    transition: border-color 0.3s ease;
+  }
+
+  input:focus {
+    border-color: #4f46e5;
+    outline: none;
+    background-color: #fff;
+  }
+
+  .submit-btn {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    background-color: #4f46e5;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+  }
+
+  .submit-btn:hover {
+    background-color: #4338ca;
+  }
+</style>
+{% endblock styles %}
+
+{% block content %}
+<h2>Sign Up</h2>
+
+<form action="" method="post">
+  <div class="email-field">
+    <label for="email">Email Address:</label>
+    <input type="email" id="email" name="email" placeholder="Enter email" required>
+  </div>
+
+  <div class="name-field">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" placeholder="Enter name" required>
+  </div>
+
+  <div class="pass1-field">
+    <label for="password1">Password:</label>
+    <input type="password" id="password1" name="password1" placeholder="Enter password" required>
+  </div>
+
+  <div class="pass2-field">
+    <label for="password2">Re-Enter Password:</label>
+    <input type="password" id="password2" name="password2" placeholder="Confirm password" required>
+  </div>
+
+  <div class="phone-field">
+    <label for="phone">Enter Phone Number:</label>
+    <input type="number" id="phone" name="phone" placeholder="Enter Phone Number" required>
+  </div>
+
+  <div class="alert-phone-field">
+    <label for="alert-phone">Enter Alert Number:</label>
+    <input type="number" id="alert-phone" name="alert-phone" placeholder="Enter Alert Number" required>
+  </div>
+
+  <button type="submit" class="submit-btn">Submit</button>
+</form>
+{% endblock content %}

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Violence Detection</title>
+  {% block styles %}{% endblock styles %}
+  <style>
+    :root {
+      --primary-color: #4f46e5;
+      --danger-color: #ef4444;
+      --success-color: #10b981;
+      --bg-color: #f9fafb;
+      --text-color: #111827;
+      --border-radius: 8px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      line-height: 1.6;
+    }
+
+    .navbar {
+      background-color: white;
+      border-bottom: 1px solid #e5e7eb;
+      padding: 12px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .navbar-left,
+    .navbar-right {
+      display: flex;
+      gap: 16px;
+    }
+
+    .navbar a {
+      color: var(--text-color);
+      text-decoration: none;
+      font-size: 16px;
+      padding: 8px 12px;
+      border-radius: var(--border-radius);
+      transition: background-color 0.3s ease;
+    }
+
+    .navbar a:hover {
+      background-color: #e0e7ff;
+    }
+
+    .alert-bar {
+      margin: 20px auto;
+      max-width: 600px;
+      padding: 0 16px;
+    }
+
+    .alert {
+      border: none;
+      padding: 16px;
+      border-radius: var(--border-radius);
+      font-size: 16px;
+      margin-bottom: 12px;
+      transition: opacity 0.5s ease;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .alert button {
+      background: none;
+      border: none;
+      font-size: 20px;
+      cursor: pointer;
+      color: inherit;
+    }
+
+    .alert.success {
+      background-color: #d1fae5;
+      color: #065f46;
+    }
+
+    .alert.error {
+      background-color: #fee2e2;
+      color: #991b1b;
+    }
+
+    .close-delayed {
+      opacity: 1;
+      animation: fadeOut 1s ease forwards;
+      animation-delay: 3s;
+    }
+
+    @keyframes fadeOut {
+      to {
+        opacity: 0;
+      }
+    }
+
+    .content {
+      padding: 32px 24px;
+      max-width: 900px;
+      margin: auto;
+    }
+  </style>
+</head>
+<body>
+  <div class="navbar">
+    <div class="navbar-left">
+      <a href="{% if user.is_authenticated %}/home{% else %}/{% endif %}">Home</a>
+    </div>
+
+    <div class="navbar-right">
+      {% if user.is_authenticated %}
+        <a href="/auth/dashboard">Dashboard</a>
+        <a href="/auth/logout">Logout</a>
+      {% else %}
+        <a href="/auth/login">Login</a>
+        <a href="/auth/sign-up">Register</a>
+      {% endif %}
+    </div>
+  </div>
+
+  <div class="alert-bar">
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+        {% for category, message in messages %}
+          {% if category == 'alert' %}
+            <div class="alert error close-delayed">
+              {{ message }}
+              <button type="button" onclick="this.parentElement.style.display='none'">&times;</button>
+            </div>
+          {% else %}
+            <div class="alert success close-delayed">
+              {{ message }}
+              <button type="button" onclick="this.parentElement.style.display='none'">&times;</button>
+            </div>
+          {% endif %}
+        {% endfor %}
+      {% endif %}
+    {% endwith %}
+  </div>
+
+  <div class="content">
+    {% block content %}{% endblock content %}
+  </div>
+</body>
+</html>
