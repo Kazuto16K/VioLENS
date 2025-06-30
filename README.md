@@ -75,3 +75,23 @@ cd Website
 
 # Run the Flask app
 python main.py
+```
+
+---
+
+## 👥 Authors
+
+- **Soumava Das** – VioLENS: Intelligent Violence Detection System (2025)
+- **Sarthak Saha** – VioLENS: Intelligent Violence Detection System (2025)
+- **Debshankar Dey** – VioLENS: Intelligent Violence Detection System (2025)
+- **Avipriya Ghosh** – VioLENS: Intelligent Violence Detection System (2025)
+
+---
+
+## Acknowledgement
+
+- We would like to thank N.Wokje for providing the deep_sort code at [Deep Sort](https://github.com/nwojke/deep_sort)
+- We would also like to thank Model Bunker for providing the deep_sort code implemened using pytorch that helped in our project [Deepsort: using Pytorch](https://github.com/ModelBunker/Deep-SORT-PyTorch)
+
+---
+
