@@ -65,7 +65,7 @@ We created our own dataset using the `pose_data_generation.py` script:
 ```bash
 
 # Clone the repository
-git clone https://github.com/yourusername/your-repo-name.git
+git clone https://github.com/Kazuto16K/VioLENS.git
 
 # Install Requirements
 pip install -r requirements.txt
