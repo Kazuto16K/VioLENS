@@ -1,13 +1,13 @@
-# Part 2: Real-time Violence Detection using PoseLSTM
+# Part 2: Real-time Violence Detection using PoseLSTM and PoseTransformer
 
-In this phase of the project, we developed a **real-time violence detection pipeline** based on human pose estimation. Our custom architecture, **PoseLSTM**, utilizes pose landmarks to identify violent actions from webcam or video input in real time.
+In this phase of the project, we developed a **real-time violence detection pipeline** based on human pose estimation. Our custom architecture, **PoseLSTM** and **PoseTransformer**, utilizes pose landmarks to identify violent actions from webcam or video input in real time.
 
 ---
 
 ## 🎯 Key Objectives
 
 - Generate a **custom pose-based dataset** using MediaPipe.
-- Train an LSTM-based deep learning model (`PoseLSTM`) on pose features.
+- Train an LSTM-based deep learning model (`PoseLSTM`) or Transformer-based deep learning model (`PoseTransformer`) on pose features.
 - Deploy a real-time pipeline with **YOLO**, **DeepSORT**, **MediaPipe**, and the trained model.
 
 ---
