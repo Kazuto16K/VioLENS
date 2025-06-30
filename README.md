@@ -1,4 +1,4 @@
-# Part 2: Real-time Violence Detection using PoseLSTM and PoseTransformer
+#  Real-time Violence Detection using PoseLSTM and PoseTransformer
 
 In this phase of the project, we developed a **real-time violence detection pipeline** based on human pose estimation. Our custom architecture, **PoseLSTM** and **PoseTransformer**, utilizes pose landmarks to identify violent actions from webcam or video input in real time.
 
@@ -62,8 +62,16 @@ We created our own dataset using the `pose_data_generation.py` script:
 
 ## 🛠️ Setup & Run
 
-### 📥 Clone the repository
-
 ```bash
+
+# Clone the repository
 git clone https://github.com/yourusername/your-repo-name.git
+
+# Install Requirements
+pip install requirements.txt
+
+# Change directory to Website
 cd your-repo-name/Website
+
+# Run the Flask app
+python main.py
