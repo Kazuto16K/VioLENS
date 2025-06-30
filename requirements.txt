@@ -12,9 +12,7 @@ opencv_python==4.9.0.80
 opencv_python_headless==4.9.0.80
 pandas==2.3.0
 python_bcrypt==0.3.2
-PyYAML==6.0.1
-PyYAML==6.0.2
-scipy==1.16.0
+scipy==1.12.0
 SQLAlchemy==2.0.27
 tensorflow==2.19.0
 tensorflow_intel==2.13.0
