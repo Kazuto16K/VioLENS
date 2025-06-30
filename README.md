@@ -38,8 +38,8 @@ We created our own dataset using the `pose_data_generation.py` script:
 ##  Model Architecture – PoseLSTM
 
 - The model is a **4-layer LSTM** network trained on the `.csv` pose data.
-- Trained using the `training_lstm.ipynb` notebook.
-- Achieved **100% accuracy** on our generated dataset during evaluation.
+- Trained using the `poselstm.ipynb` and `posetransformer.ipynb` notebook.
+- Achieved **99.95% accuracy** on **PoseLSTM** and **98.59% accuracy** on **PoseTransformer** models using our generated dataset during evaluation.
 
 **Input shape:** `(batch_size, sequence_length, 132)`  
 **Output:** Binary classification (Violent / Non-Violent)
