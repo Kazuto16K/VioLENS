@@ -71,7 +71,7 @@ git clone https://github.com/yourusername/your-repo-name.git
 pip install requirements.txt
 
 # Change directory to Website
-cd your-repo-name/Website
+cd Website
 
 # Run the Flask app
 python main.py
