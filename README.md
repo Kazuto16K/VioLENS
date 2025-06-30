@@ -48,23 +48,22 @@ We created our own dataset using the `generate_pose_data.py` script:
 
 ## 🎥 Real-time Detection Pipeline
 
-Our final system performs live violence detection using the following components:
+### 🔧 Modules Used:
 
-1. **YOLOv8**  
-   → Detects humans in the video frame.
-
-2. **DeepSORT**  
-   → Assigns unique IDs to each tracked individual across frames.
-
-3. **MediaPipe Pose**  
-   → Extracts pose landmarks for each tracked person.
-
-4. **Pose Buffering**  
-   → For each individual, stores a buffer of 20 frames worth of pose data.
-
-5. **PoseLSTM Model Prediction**  
-   → When the buffer is full, the model predicts whether the tracked person is behaving violently.
+| Step | Module Used | Purpose |
+|------|-------------|---------|
+| 1️⃣   | YOLOv8       | Detect humans in frames |
+| 2️⃣   | DeepSORT     | Track individual humans |
+| 3️⃣   | MediaPipe Pose | Extract 33 pose landmarks/person |
+| 4️⃣   | Pose Buffer  | Accumulate 20-frame sequence/person |
+| 5️⃣   | PoseLSTM     | Predict violence status per person |
 
 ---
 
+## 🛠️ Setup & Run
 
+### 📥 Clone the repository
+
+```bash
+git clone https://github.com/yourusername/your-repo-name.git
+cd your-repo-name/Website
