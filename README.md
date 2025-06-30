@@ -68,7 +68,7 @@ We created our own dataset using the `pose_data_generation.py` script:
 git clone https://github.com/yourusername/your-repo-name.git
 
 # Install Requirements
-pip install requirements.txt
+pip install -r requirements.txt
 
 # Change directory to Website
 cd Website
@@ -95,3 +95,8 @@ python main.py
 
 ---
 
+## 📄 License
+
+This project is licensed under the **GNU General Public License v3.0** (GPL-3.0) due to the usage of [DeepSort](https://github.com/ModelBunker/DeepSort-YOLO), which is GPL-licensed.
+
+See the [LICENSE](./LICENSE) file for full details.
