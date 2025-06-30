@@ -6,7 +6,7 @@ ipdb==0.13.13
 matplotlib==3.8.3
 mediapipe==0.10.9
 motmetrics==1.4.0
-numpy==2.3.1
+numpy==1.26.4
 opencv_contrib_python==4.10.0.84
 opencv_python==4.9.0.80
 opencv_python_headless==4.9.0.80
