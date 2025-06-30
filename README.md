@@ -56,7 +56,7 @@ We created our own dataset using the `pose_data_generation.py` script:
 | 2️⃣   | DeepSORT     | Track individual humans |
 | 3️⃣   | MediaPipe Pose | Extract 33 pose landmarks/person |
 | 4️⃣   | Pose Buffer  | Accumulate 20-frame sequence/person |
-| 5️⃣   | PoseLSTM     | Predict violence status per person |
+| 5️⃣   | PoseModel     | Predict violence status per person |
 
 ---
 
