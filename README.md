@@ -14,7 +14,7 @@ In this phase of the project, we developed a **real-time violence detection pipe
 
 ## 📁 Dataset Generation (Custom)
 
-We created our own dataset using the `generate_pose_data.py` script:
+We created our own dataset using the `pose_data_generation.py` script:
 
 1. **Pose Landmark Extraction**
    - Extracted **33 pose landmarks** per person using **MediaPipe Pose**.
