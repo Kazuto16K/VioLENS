@@ -105,6 +105,8 @@ See the [LICENSE](./LICENSE) file for full details.
 
 ## ▶️ Sample Working Demo 
 
+This video presents a basic demonstration of our Violence Detection System in action. While it does not feature intense or aggressive fight sequences, the system effectively analyzes arm movements and body posture to accurately classify actions as violent or non-violent.
+ 
 https://github.com/user-attachments/assets/4b943e83-dbe1-4609-91ab-6115ebc85cf5
 
 ---
